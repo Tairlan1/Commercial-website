@@ -1,0 +1,16 @@
+# Ignore JDK folders
+oracleJdk*/
+jdk*/
+jre*/
+
+# Ignore large Java files
+**/lib/modules
+
+# Web project common ignores
+node_modules/
+dist/
+build/
+target/
+*.log
+.env
+.DS_Store

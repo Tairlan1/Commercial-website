@@ -1,0 +1,106 @@
+{
+  "ru": {
+    "nav_about": "О компании",
+    "nav_products": "Продукция",
+    "nav_lab": "Лабораторные испытания",
+    "nav_contacts": "Контакты",
+
+    "hero_title": "Инновационные решения для промышленности",
+    "hero_desc": "Company — современная компания с фокусом на качество и технологии.",
+    "btn_products": "Продукция",
+    "btn_about": "О компании",
+
+    "approach_title": "О продукте",
+    "approach_desc": "Мы строим процессы вокруг качества и стабильности.",
+
+    "approach_item_1_title": "Контроль качества",
+    "approach_item_1_desc": "Проверка на каждом этапе",
+    "approach_item_2_title": "Технологии",
+    "approach_item_2_desc": "Современные решения",
+    "approach_item_3_title": "Надёжность",
+    "approach_item_3_desc": "Стабильность процессов",
+
+    "values_title": "Преимущества работы с нами",
+    "values_1": "Технологичность",
+    "values_2": "Контроль качества",
+    "values_3": "Партнёрство",
+
+    "cta_title": "Готовы к сотрудничеству?",
+    "cta_desc": "Свяжитесь с нами для консультации",
+    "cta_btn": "Связаться",
+
+    "footer_desc": "Инженерные решения нового поколения",
+    "footer_presence": "Связь и присутствие",
+    "footer_rights": "Все права защищены"
+  },
+
+  "en": {
+    "nav_about": "About",
+    "nav_products": "Products",
+    "nav_lab": "Laboratory Testing",
+    "nav_contacts": "Contacts",
+
+    "hero_title": "Innovative solutions for industry",
+    "hero_desc": "Company is a modern company focused on quality and technology.",
+    "btn_products": "Products",
+    "btn_about": "About",
+
+    "approach_title": "About the Product",
+    "approach_desc": "We build processes around quality and stability.",
+
+    "approach_item_1_title": "Quality control",
+    "approach_item_1_desc": "Inspection at every stage",
+    "approach_item_2_title": "Technology",
+    "approach_item_2_desc": "Modern solutions",
+    "approach_item_3_title": "Reliability",
+    "approach_item_3_desc": "Process stability",
+
+    "values_title": "Our Advantages",
+    "values_1": "Technology-driven",
+    "values_2": "Quality control",
+    "values_3": "Partnership",
+
+    "cta_title": "Ready to collaborate?",
+    "cta_desc": "Contact us for consultation",
+    "cta_btn": "Contact us",
+
+    "footer_desc": "Next-generation engineering solutions",
+    "footer_presence": "Connect with us",
+    "footer_rights": "All rights reserved"
+  },
+
+  "kz": {
+    "nav_about": "Компания туралы",
+    "nav_products": "Өнімдер",
+    "nav_lab": "Зертханалық сынақтар",
+    "nav_contacts": "Байланыс",
+
+    "hero_title": "Өнеркәсіпке арналған инновациялық шешімдер",
+    "hero_desc": "Company — сапа мен технологияға бағытталған заманауи компания.",
+    "btn_products": "Өнімдер",
+    "btn_about": "Компания туралы",
+
+    "approach_title": "Өнім туралы",
+    "approach_desc": "Біз сапа мен тұрақтылыққа негізделген процестер құрамыз.",
+
+    "approach_item_1_title": "Сапаны бақылау",
+    "approach_item_1_desc": "Әр кезеңде тексеру",
+    "approach_item_2_title": "Технология",
+    "approach_item_2_desc": "Заманауи шешімдер",
+    "approach_item_3_title": "Тұрақтылық",
+    "approach_item_3_desc": "Процестердің сенімділігі",
+
+    "values_title": "Неліктен біз?",
+    "values_1": "Технологиялылық",
+    "values_2": "Сапаны бақылау",
+    "values_3": "Серіктестік",
+
+    "cta_title": "Ынтымақтастыққа дайынсыз ба?",
+    "cta_desc": "Кеңес алу үшін хабарласыңыз",
+    "cta_btn": "Байланысу",
+
+    "footer_desc": "Жаңа буын инженерлік шешімдер",
+    "footer_presence": "Бізбен байланыс",
+    "footer_rights": "Барлық құқықтар қорғалған"
+  }
+}

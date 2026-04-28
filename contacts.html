@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакты | GLOBAL TRADE</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/app.css" />
+</head>
+
+<body class="font-sans text-gray-900 overflow-x-hidden bg-white">
+
+<!-- HEADER -->
+<header
+  id="mainHeader"
+  class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out
+         border-b border-white/20 py-5"
+  style="
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0 8px 32px rgba(15,49,72,0.08);
+  "
+>
+  <div
+    class="w-full flex justify-between items-center
+           px-4 sm:px-6 lg:px-10 xl:px-16
+           transition-all duration-500"
+  >
+
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center">
+      <div
+        id="logoBox"
+        class="bg-white/95 backdrop-blur-md rounded-sm
+               px-3 py-1.5 shadow-md border border-gray-200
+               transition-all duration-500"
+      >
+        <div class="flex flex-col items-center leading-none">
+
+          <img
+            src="./assets/Logo.png"
+            alt="GLOBAL TRADE"
+            id="logoImg"
+            class="h-8 md:h-9 w-auto object-contain mb-0 transition-all duration-500"
+          />
+
+          <h1
+            id="logoText"
+            class="text-[#0F3148] font-semibold text-xs md:text-sm
+                   tracking-wide leading-none -mt-1 transition-all duration-500"
+          >
+            GLOBAL TRADE
+          </h1>
+
+        </div>
+      </div>
+    </a>
+
+    <!-- NAV -->
+    <nav
+      id="mainNav"
+      class="hidden md:flex items-center whitespace-nowrap gap-8 text-sm font-medium text-white/90 transition-all duration-500"
+    >
+      <a data-i18n="nav_about" href="about.html" class="hover:text-[#D8C7A1] transition whitespace-nowrap">
+        О компании
+      </a>
+
+      <a data-i18n="nav_products" href="products.html" class="hover:text-[#D8C7A1] transition whitespace-nowrap">
+        Продукция
+      </a>
+
+      <a data-i18n="nav_lab" href="lab.html" class="hover:text-[#D8C7A1] transition whitespace-nowrap">
+        Лабораторные испытания
+      </a>
+
+      <a data-i18n="nav_contacts" href="contacts.html" class="text-[#D8C7A1] whitespace-nowrap">
+        Контакты
+      </a>
+    </nav>
+
+    <!-- LANGUAGE SWITCHER -->
+    <div class="relative" id="langDropdown">
+
+      <button
+        type="button"
+        id="langToggle"
+        class="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md text-white shadow-sm hover:border-[#D8C7A1] transition"
+      >
+        <img
+          id="currentFlag"
+          src="https://flagcdn.com/w40/ru.png"
+          alt="RU"
+          class="w-5 h-5 rounded-sm object-cover"
+        />
+
+        <span id="currentLang" class="text-sm font-medium">
+          RU
+        </span>
+
+        <svg
+          id="langArrow"
+          class="w-4 h-4 transition duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+
+      <div
+        id="langMenu"
+        class="hidden absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-xl p-2 z-50"
+      >
+
+        <button
+          type="button"
+          onclick="switchLanguage('ru')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/ru.png" class="w-5 h-5 rounded-sm" alt="RU" />
+          <span>Русский</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchLanguage('en')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/gb.png" class="w-5 h-5 rounded-sm" alt="EN" />
+          <span>English</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchLanguage('kz')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/kz.png" class="w-5 h-5 rounded-sm" alt="KZ" />
+          <span>Қазақша</span>
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="relative pt-40 pb-24 overflow-hidden">
+
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0F3148] via-[#163F5B] to-[#1C5478]"></div>
+
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-16 left-16 w-72 h-72 border border-white rounded-full"></div>
+    <div class="absolute bottom-10 right-20 w-96 h-96 border border-white rounded-full"></div>
+  </div>
+
+  <div class="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <div class="max-w-4xl" data-aos="fade-up">
+
+      <p class="text-[#D8C7A1] text-sm uppercase tracking-[0.2em] mb-4">
+        CONTACT US
+      </p>
+
+      <h1
+        data-i18n="contacts_title"
+        class="text-4xl md:text-6xl font-semibold text-white leading-tight mb-6"
+      >
+        Контакты
+      </h1>
+
+      <p
+        data-i18n="contacts_desc"
+        class="text-white/80 text-lg max-w-2xl leading-relaxed"
+      >
+        Мы всегда открыты для сотрудничества и готовы ответить на ваши вопросы.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT INFO -->
+<section class="py-20 bg-gradient-to-b from-white to-[#F8FAFC]">
+  <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+      <!-- LEFT -->
+      <div data-aos="fade-right">
+
+        <h2 class="text-3xl md:text-4xl font-semibold text-[#0F3148] mb-8">
+          Свяжитесь с нами
+        </h2>
+
+        <div class="space-y-8">
+
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F3148] mb-2">Адрес</h3>
+            <p class="text-gray-600">
+              Республика Казахстан, г. Алматы<br />
+              Бизнес-центр GLOBAL TRADE
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F3148] mb-2">Телефон</h3>
+            <p class="text-gray-600">
+              +7 (700) 000-00-00
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F3148] mb-2">Email</h3>
+            <p class="text-gray-600">
+              info@globaltrade.kz
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F3148] mb-2">Режим работы</h3>
+            <p class="text-gray-600">
+              Пн – Пт: 09:00 – 18:00
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div data-aos="fade-left">
+
+        <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
+
+          <h3 class="text-2xl font-semibold text-[#0F3148] mb-6">
+            Обратная связь
+          </h3>
+
+          <form class="space-y-5">
+
+            <input
+              type="text"
+              placeholder="Ваше имя"
+              class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#0F3148]"
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#0F3148]"
+            />
+
+            <input
+              type="text"
+              placeholder="Телефон"
+              class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#0F3148]"
+            />
+
+            <textarea
+              rows="5"
+              placeholder="Ваше сообщение"
+              class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#0F3148]"
+            ></textarea>
+
+            <button
+              type="submit"
+              class="w-full py-4 rounded-xl bg-[#0F3148] text-white font-medium hover:scale-[1.02] transition"
+            >
+              Отправить сообщение
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- MAP -->
+<section class="relative py-20 bg-gradient-to-b from-white to-[#F8FAFC] overflow-hidden">
+
+  <!-- soft background glow -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-10 left-10 w-72 h-72 bg-[#0F3148]/5 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-10 right-10 w-80 h-80 bg-[#D8C7A1]/10 rounded-full blur-[140px]"></div>
+  </div>
+
+  <div class="relative z-10">
+
+    <!-- title block -->
+    <div
+      class="w-full px-4 sm:px-6 lg:px-10 xl:px-16 mb-12 text-center"
+      data-aos="fade-up"
+    >
+      <div class="max-w-3xl mx-auto">
+
+        <p class="text-[#D8C7A1] text-sm uppercase tracking-[0.2em] mb-3">
+          LOCATION
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-semibold text-[#0F3148] mb-4">
+          Наше расположение
+        </h2>
+
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Мы находимся в удобной локации для партнеров и клиентов.
+          Вы можете легко связаться с нами или посетить офис лично.
+        </p>
+
+      </div>
+    </div>
+
+    <!-- full width map -->
+    <div
+      class="w-full"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <div class="relative w-full h-[500px] overflow-hidden shadow-[0_20px_80px_rgba(15,49,72,0.12)]">
+
+        <!-- elegant top overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0F3148]/5 to-transparent z-10 pointer-events-none"></div>
+
+        <iframe
+          src="https://www.google.com/maps?q=Almaty,Kazakhstan&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full grayscale-[8%] contrast-[102%]"
+        >
+        </iframe>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./js/internationalization.js"></script>
+<script src="./js/app.js"></script>
+
+</body>
+</html>

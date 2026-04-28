@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторные испытания | GLOBAL TRADE</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/app.css" />
+</head>
+
+<body class="font-sans text-gray-900 overflow-x-hidden bg-white">
+
+<!-- HEADER -->
+<header
+  id="mainHeader"
+  class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out
+         border-b border-white/20 py-5"
+  style="
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0 8px 32px rgba(15,49,72,0.08);
+  "
+>
+  <div
+    class="w-full flex justify-between items-center
+           px-4 sm:px-6 lg:px-10 xl:px-16
+           transition-all duration-500"
+  >
+
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center">
+      <div
+        id="logoBox"
+        class="bg-white/95 backdrop-blur-md rounded-sm
+               px-3 py-1.5 shadow-md border border-gray-200
+               transition-all duration-500"
+      >
+        <div class="flex flex-col items-center leading-none">
+
+          <img
+            src="./assets/Logo.png"
+            alt="GLOBAL TRADE"
+            id="logoImg"
+            class="h-8 md:h-9 w-auto object-contain mb-0 transition-all duration-500"
+          />
+
+          <h1
+            id="logoText"
+            class="text-[#0F3148] font-semibold text-xs md:text-sm
+                   tracking-wide leading-none -mt-1 transition-all duration-500"
+          >
+            GLOBAL TRADE
+          </h1>
+
+        </div>
+      </div>
+    </a>
+
+    <!-- NAV -->
+    <nav
+      id="mainNav"
+      class="hidden md:flex items-center whitespace-nowrap gap-8 text-sm font-medium text-white/90 transition-all duration-500"
+    >
+      <a data-i18n="nav_about" href="about.html" class="hover:text-[#D8C7A1] transition whitespace-nowrap">
+        О компании
+      </a>
+
+      <a data-i18n="nav_products" href="products.html" class="hover:text-[#D8C7A1] transition whitespace-nowrap">
+        Продукция
+      </a>
+
+      <a data-i18n="nav_lab" href="lab.html" class="text-[#D8C7A1] whitespace-nowrap">
+        Лабораторные испытания
+      </a>
+
+      <a data-i18n="nav_contacts" href="contacts.html" class="hover:text-[#D8C7A1] transition whitespace-nowrap">
+        Контакты
+      </a>
+    </nav>
+
+    <!-- LANGUAGE SWITCHER -->
+    <div class="relative" id="langDropdown">
+      <button
+        type="button"
+        id="langToggle"
+        class="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md text-white shadow-sm hover:border-[#D8C7A1] transition"
+      >
+        <img
+          id="currentFlag"
+          src="https://flagcdn.com/w40/ru.png"
+          alt="RU"
+          class="w-5 h-5 rounded-sm object-cover"
+        />
+
+        <span id="currentLang" class="text-sm font-medium">
+          RU
+        </span>
+
+        <svg
+          id="langArrow"
+          class="w-4 h-4 transition duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+
+      <div
+        id="langMenu"
+        class="hidden absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-xl p-2 z-50"
+      >
+        <button
+          type="button"
+          onclick="switchLanguage('ru')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/ru.png" class="w-5 h-5 rounded-sm" alt="RU" />
+          <span>Русский</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchLanguage('en')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/gb.png" class="w-5 h-5 rounded-sm" alt="EN" />
+          <span>English</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchLanguage('kz')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/kz.png" class="w-5 h-5 rounded-sm" alt="KZ" />
+          <span>Қазақша</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="relative pt-40 pb-24 overflow-hidden">
+
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0F3148] via-[#163F5B] to-[#1C5478]"></div>
+
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-16 left-16 w-72 h-72 border border-white rounded-full"></div>
+    <div class="absolute bottom-10 right-20 w-96 h-96 border border-white rounded-full"></div>
+  </div>
+
+  <div class="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <div class="max-w-4xl" data-aos="fade-up">
+
+      <p class="text-[#D8C7A1] text-sm uppercase tracking-[0.2em] mb-4">
+        QUALITY CONTROL
+      </p>
+
+      <h1
+        data-i18n="lab_title"
+        class="text-4xl md:text-6xl font-semibold text-white leading-tight mb-6"
+      >
+        Лабораторные испытания
+      </h1>
+
+      <p
+        data-i18n="lab_desc"
+        class="text-white/80 text-lg max-w-2xl leading-relaxed"
+      >
+        Современные методы анализа, контроля качества и подтверждения соответствия продукции.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- LAB FEATURES -->
+<section class="py-20 bg-gradient-to-b from-white to-[#F8FAFC]">
+  <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+      <!-- LEFT -->
+      <div data-aos="fade-right">
+
+        <h2 class="text-3xl md:text-4xl font-semibold text-[#0F3148] mb-6">
+          Контроль качества на каждом этапе
+        </h2>
+
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Мы обеспечиваем полный цикл лабораторных испытаний с использованием
+          современного оборудования и строгих стандартов проверки.
+        </p>
+
+        <div class="space-y-6">
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0F3148] flex items-center justify-center font-semibold">
+              01
+            </div>
+            <div>
+              <h3 class="font-semibold">Физико-химический анализ</h3>
+              <p class="text-gray-600 text-sm">Точное исследование состава продукции</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0F3148] flex items-center justify-center font-semibold">
+              02
+            </div>
+            <div>
+              <h3 class="font-semibold">Проверка соответствия</h3>
+              <p class="text-gray-600 text-sm">Соответствие техническим требованиям</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0F3148] flex items-center justify-center font-semibold">
+              03
+            </div>
+            <div>
+              <h3 class="font-semibold">Сертификационные испытания</h3>
+              <p class="text-gray-600 text-sm">Подтверждение стандартов качества</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div data-aos="fade-left">
+        <div class="w-full h-[460px] bg-gray-100 rounded-3xl flex items-center justify-center">
+          <span class="text-gray-400 text-sm">(изображение лаборатории)</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="py-20 bg-white">
+  <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-semibold text-[#0F3148]">
+        Этапы испытаний
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="p-8 rounded-2xl border border-gray-100 shadow-sm" data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-4 text-[#0F3148]">Отбор образцов</h3>
+        <p class="text-gray-600 text-sm">
+          Подготовка и проверка материалов перед испытаниями
+        </p>
+      </div>
+
+      <div class="p-8 rounded-2xl border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold mb-4 text-[#0F3148]">Лабораторный анализ</h3>
+        <p class="text-gray-600 text-sm">
+          Проведение измерений и исследований по стандартам
+        </p>
+      </div>
+
+      <div class="p-8 rounded-2xl border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold mb-4 text-[#0F3148]">Выдача заключения</h3>
+        <p class="text-gray-600 text-sm">
+          Подтверждение результатов и оформление документации
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-20 bg-[#0F3148] text-white">
+  <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+        Нужны лабораторные испытания?
+      </h2>
+
+      <p class="text-white/75 mb-8">
+        Свяжитесь с нами для консультации и подбора оптимального решения
+      </p>
+
+      <a
+        href="contacts.html"
+        class="inline-block px-8 py-4 rounded-xl bg-[#D8C7A1] text-[#0F3148] font-medium hover:scale-105 transition"
+      >
+        Получить консультацию
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./js/internationalization.js"></script>
+<script src="./js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Global Trade</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/app.css" />
+</head>
+
+<body class="font-sans text-gray-900 overflow-x-hidden bg-[#F8F8F6]">
+
+<!-- HEADER -->
+<header
+  id="mainHeader"
+  class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out
+         border-b border-white/20 py-5"
+  style="
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0 8px 32px rgba(15, 49, 72, 0.08);
+  "
+>
+  <div
+    id="headerInner"
+    class="w-full flex justify-between items-center
+           px-4 sm:px-6 lg:px-10 xl:px-16
+           transition-all duration-500"
+  >
+
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center">
+
+      <div
+        id="logoBox"
+        class="bg-white/95 backdrop-blur-md rounded-sm
+               px-3 py-1.5 shadow-md border border-gray-200
+               transition-all duration-500"
+      >
+        <div class="flex flex-col items-center leading-none">
+
+          <img
+            src="./assets/Logo.png"
+            alt="GLOBAL TRADE"
+            id="logoImg"
+            class="h-8 md:h-9 w-auto object-contain mb-0 transition-all duration-500"
+          />
+
+          <h1
+            id="logoText"
+            class="text-[#0F3148] font-semibold text-xs md:text-sm
+                   tracking-wide leading-none -mt-1 transition-all duration-500"
+          >
+            GLOBAL TRADE
+          </h1>
+
+        </div>
+      </div>
+
+    </a>
+
+    <!-- NAV -->
+    <nav
+      id="mainNav"
+      class="hidden md:flex gap-8 text-sm font-medium text-white/90 transition-all duration-500"
+    >
+      <a data-i18n="nav_about" href="about.html" class="hover:text-[#D8C7A1] transition">
+        О компании
+      </a>
+
+      <a data-i18n="nav_products" href="products.html" class="hover:text-[#D8C7A1] transition">
+        Продукция
+      </a>
+
+      <a data-i18n="nav_lab" href="lab.html" class="hover:text-[#D8C7A1] transition">
+        Лабораторные испытания
+      </a>
+
+      <a data-i18n="nav_contacts" href="contacts.html" class="hover:text-[#D8C7A1] transition">
+        Контакты
+      </a>
+    </nav>
+
+    <!-- LANGUAGE SWITCHER -->
+    <div class="relative" id="langDropdown">
+
+      <button
+        type="button"
+        id="langToggle"
+        class="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md text-white shadow-sm hover:border-[#D8C7A1] transition"
+      >
+        <img
+          id="currentFlag"
+          src="https://flagcdn.com/w40/ru.png"
+          alt="RU"
+          class="w-5 h-5 rounded-sm object-cover"
+        />
+
+        <span id="currentLang" class="text-sm font-medium">
+          RU
+        </span>
+
+        <svg
+          id="langArrow"
+          class="w-4 h-4 transition duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+
+      <div
+        id="langMenu"
+        class="hidden absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-xl p-2 z-50"
+      >
+
+        <button
+          type="button"
+          onclick="switchLanguage('ru')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/ru.png" class="w-5 h-5 rounded-sm" alt="RU" />
+          <span>Русский</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchLanguage('en')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/gb.png" class="w-5 h-5 rounded-sm" alt="EN" />
+          <span>English</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchLanguage('kz')"
+          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+        >
+          <img src="https://flagcdn.com/w40/kz.png" class="w-5 h-5 rounded-sm" alt="KZ" />
+          <span>Қазақша</span>
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-40 pb-20 relative overflow-hidden">
+
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0F3148] to-[#163B56]"></div>
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D8C7A1]/10 blur-[140px] rounded-full"></div>
+
+  <div class="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+    <div class="max-w-3xl">
+
+      <p class="text-white/70 uppercase tracking-[0.2em] text-sm mb-4" data-aos="fade-up">
+        GLOBAL TRADE
+      </p>
+
+      <h1
+        class="text-4xl md:text-6xl font-semibold text-white leading-tight mb-6"
+        data-aos="fade-up"
+      >
+        О компании
+      </h1>
+
+      <p
+        class="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        GLOBAL TRADE — современная компания, ориентированная на качество,
+        надёжность и долгосрочное партнёрство в промышленной сфере.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- COMPANY STORY -->
+<section class="py-24 relative">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#F3F0EA] via-white to-[#F8F8F6]"></div>
+
+  <div class="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <div data-aos="fade-right">
+        <p class="text-[#0F3148]/60 uppercase tracking-[0.18em] text-sm mb-3">
+          Our Story
+        </p>
+
+        <h2 class="text-3xl md:text-5xl font-semibold text-[#0F3148] mb-6">
+          Надёжность как основа
+        </h2>
+
+        <p class="text-[#0F3148]/70 text-lg leading-relaxed mb-6">
+          Мы строим устойчивые бизнес-процессы, где качество продукции,
+          прозрачность работы и доверие клиентов являются главным приоритетом.
+        </p>
+
+        <p class="text-[#0F3148]/70 text-lg leading-relaxed">
+          Наша цель — создавать долгосрочные партнёрства и предлагать решения,
+          которые соответствуют международным стандартам качества.
+        </p>
+      </div>
+
+      <div data-aos="fade-left">
+        <div class="w-full h-[460px] rounded-[32px] bg-white border border-white/60 shadow-xl flex items-center justify-center">
+          <span class="text-[#0F3148]/40">(изображение компании)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- VALUES -->
+<section class="py-20 bg-white">
+  <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <h2 class="text-3xl md:text-5xl font-semibold text-[#0F3148] mb-4">
+        Наши принципы
+      </h2>
+      <p class="text-[#0F3148]/65 max-w-2xl mx-auto">
+        Основные ценности, на которых строится работа компании
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-[#F8F8F6] border border-[#EAEAEA] rounded-3xl p-8" data-aos="fade-up">
+        <h3 class="text-xl font-semibold text-[#0F3148] mb-3">Качество</h3>
+        <p class="text-[#0F3148]/65">Контроль на каждом этапе производства и поставок.</p>
+      </div>
+
+      <div class="bg-[#F8F8F6] border border-[#EAEAEA] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold text-[#0F3148] mb-3">Ответственность</h3>
+        <p class="text-[#0F3148]/65">Прозрачность процессов и ответственность перед партнёрами.</p>
+      </div>
+
+      <div class="bg-[#F8F8F6] border border-[#EAEAEA] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold text-[#0F3148] mb-3">Развитие</h3>
+        <p class="text-[#0F3148]/65">Постоянное совершенствование технологий и подходов.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-20 bg-[#0F3148] text-white">
+  <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-16 text-center">
+
+    <h2 class="text-3xl md:text-4xl font-semibold mb-4" data-aos="fade-up">
+      Готовы к сотрудничеству?
+    </h2>
+
+    <p class="text-white/75 mb-8" data-aos="fade-up" data-aos-delay="100">
+      Свяжитесь с нами для обсуждения вашего проекта
+    </p>
+
+    <a
+      href="contacts.html"
+      class="inline-block bg-[#D8C7A1] text-[#0F3148] px-8 py-4 rounded-xl font-medium hover:opacity-90 transition"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      Связаться
+    </a>
+
+  </div>
+</section>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- I18N -->
+<script src="./js/internationalization.js"></script>
+<!-- app.js -->
+<script src="./js/app.js"></script>
+</body>
+</html>
