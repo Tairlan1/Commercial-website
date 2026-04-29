@@ -438,90 +438,68 @@
       </div>
     </label>
 
-    <!-- expandable menu -->
+    <!-- EXPANDABLE MENU -->
     <div
-      class="relative
-             bg-white
-             border border-[#E8DFCF]
+      class="side-nav-menu relative
 
-             rounded-l-none
-             rounded-r-[28px]
+            bg-gradient-to-br
+            from-[#FFFFFF]
+            via-[#FCF8F2]
+            to-[#F2E8D8]
 
-             px-6 py-7
+            border border-[#D8C7A1]/35
 
-             shadow-[0_30px_80px_rgba(15,49,72,0.12)]"
+            px-5 py-6
+
+            shadow-[0_20px_60px_rgba(15,49,72,0.07)]
+
+            min-w-[260px]
+            overflow-hidden"
     >
-
-      <!-- top ornament -->
-      <div class="flex items-center gap-3 mb-6">
-        <span class="w-8 h-[1px] bg-[#D8C7A1]/80"></span>
+      <!-- subtle top line -->
+      <div class="flex items-center gap-3 mb-5">
+        <span class="flex-1 h-px bg-[#D8C7A1]/70"></span>
 
         <div
-          class="w-2.5 h-2.5 rotate-45
-                 border border-[#D8C7A1]"
+          class="w-2 h-2 rotate-45
+                border border-[#C9B48A]"
         ></div>
 
-        <span class="w-8 h-[1px] bg-[#D8C7A1]/80"></span>
+        <span class="flex-1 h-px bg-[#D8C7A1]/70"></span>
       </div>
 
       <!-- helper text -->
-      <p class="text-sm text-[#0F3148]/55 mb-6">
-        Быстрый переход по разделам
+      <p
+        class="text-[11px]
+              tracking-[0.14em]
+              uppercase
+              text-[#0F3148]/68
+              font-medium
+              mb-5"
+      >
+        Быстрый переход
       </p>
 
-      <!-- links -->
-      <div class="flex flex-col gap-4">
+      <!-- compact links -->
+      <div class="flex flex-col gap-2">
 
-        <a
-          href="#top"
-          class="block
-                text-sm font-medium
-                text-[#0F3148]/75
-                hover:text-[#0F3148]
-                hover:translate-x-1
-                transition duration-300"
-        >
+        <a href="#top" class="side-nav-link">
           Главная страница
         </a>
 
-        <a
-          href="#product"
-          class="block
-                text-sm font-medium
-                text-[#0F3148]/75
-                hover:text-[#0F3148]
-                hover:translate-x-1
-                transition duration-300"
-        >
+        <a href="#product" class="side-nav-link">
           О продукте
         </a>
 
-        <a
-          href="#values"
-          class="block
-                text-sm font-medium
-                text-[#0F3148]/75
-                hover:text-[#0F3148]
-                hover:translate-x-1
-                transition duration-300"
-        >
+        <a href="#values" class="side-nav-link">
           Преимущества
         </a>
 
-        <a
-          href="#partnership"
-          class="block
-                text-sm font-medium
-                text-[#0F3148]/75
-                hover:text-[#0F3148]
-                hover:translate-x-1
-                transition duration-300"
-        >
+        <a href="#partnership" class="side-nav-link">
           Партнёрства
         </a>
 
       </div>
-
     </div>
 
   </div>
@@ -930,6 +908,121 @@
             доверие и прозрачность на каждом этапе.
           </p>
         </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- APPLICATION AREAS -->
+<section class="py-24 bg-white relative overflow-hidden">
+
+  <!-- decorative glow -->
+  <div class="absolute top-0 left-0 w-[420px] h-[420px] bg-[#D8C7A1]/10 blur-[130px] rounded-full animate-[floatGlow_8s_ease-in-out_infinite]"></div>
+  <div class="absolute bottom-0 right-0 w-[380px] h-[380px] bg-[#0F3148]/[0.03] blur-[120px] rounded-full"></div>
+
+  <div class="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-16">
+
+    <!-- heading -->
+    <div class="text-center mb-16" data-aos="fade-up">
+
+      <p class="text-[#0F3148]/60 uppercase tracking-[0.18em] text-sm mb-3">
+        Application Areas
+      </p>
+
+      <h2 class="text-3xl md:text-5xl font-semibold text-[#0F3148] mb-5">
+        Области применения
+      </h2>
+
+      <p class="text-[#0F3148]/65 max-w-3xl mx-auto text-lg leading-relaxed">
+        Наша продукция и решения используются в ключевых отраслях промышленности,
+        где особенно важны стабильность поставок, контроль качества
+        и соответствие международным стандартам.
+      </p>
+
+    </div>
+
+    <!-- cards -->
+    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+      <!-- card -->
+      <div
+        class="card-soft bg-[#F8F8F6] border border-[#EAEAEA] rounded-[28px] p-8 shadow-sm"
+        data-aos="fade-up"
+      >
+        <div class="w-12 h-12 rounded-2xl bg-[#0F3148]/5 flex items-center justify-center mb-6">
+          <span class="text-[#0F3148] text-xl">01</span>
+        </div>
+
+        <h3 class="text-xl font-semibold text-[#0F3148] mb-4">
+          Нефтегазовая отрасль
+        </h3>
+
+        <p class="text-[#0F3148]/65 leading-relaxed">
+          Решения для предприятий добычи, переработки
+          и транспортировки сырья с высоким уровнем надёжности.
+        </p>
+      </div>
+
+      <!-- card -->
+      <div
+        class="card-soft bg-[#F8F8F6] border border-[#EAEAEA] rounded-[28px] p-8 shadow-sm"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="w-12 h-12 rounded-2xl bg-[#0F3148]/5 flex items-center justify-center mb-6">
+          <span class="text-[#0F3148] text-xl">02</span>
+        </div>
+
+        <h3 class="text-xl font-semibold text-[#0F3148] mb-4">
+          Производственные предприятия
+        </h3>
+
+        <p class="text-[#0F3148]/65 leading-relaxed">
+          Поддержка промышленных процессов
+          с контролем качества на каждом этапе поставки.
+        </p>
+      </div>
+
+      <!-- card -->
+      <div
+        class="card-soft bg-[#F8F8F6] border border-[#EAEAEA] rounded-[28px] p-8 shadow-sm"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="w-12 h-12 rounded-2xl bg-[#0F3148]/5 flex items-center justify-center mb-6">
+          <span class="text-[#0F3148] text-xl">03</span>
+        </div>
+
+        <h3 class="text-xl font-semibold text-[#0F3148] mb-4">
+          Лабораторные исследования
+        </h3>
+
+        <p class="text-[#0F3148]/65 leading-relaxed">
+          Современные методы испытаний,
+          аналитика и подтверждение соответствия стандартам.
+        </p>
+      </div>
+
+      <!-- card -->
+      <div
+        class="card-soft bg-[#F8F8F6] border border-[#EAEAEA] rounded-[28px] p-8 shadow-sm"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div class="w-12 h-12 rounded-2xl bg-[#0F3148]/5 flex items-center justify-center mb-6">
+          <span class="text-[#0F3148] text-xl">04</span>
+        </div>
+
+        <h3 class="text-xl font-semibold text-[#0F3148] mb-4">
+          Международная торговля
+        </h3>
+
+        <p class="text-[#0F3148]/65 leading-relaxed">
+          Эффективные поставки, экспортные решения
+          и долгосрочное международное партнёрство.
+        </p>
       </div>
 
     </div>

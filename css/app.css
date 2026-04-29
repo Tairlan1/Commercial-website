@@ -56,4 +56,31 @@ h1, h2 {
   }
 }
 
-    
+.side-nav-link {
+  display: block;
+  padding: 12px 18px;
+  border-radius: 16px;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #0F3148;
+  background: #FFFFFF;
+
+  border: 1.5px solid #D8C7A1;
+
+  transition: all 0.3s ease;
+}
+
+.side-nav-link:hover {
+  background: #FFFCF8;
+  border-color: #a77b22;
+  font-weight: 600;
+}
+
+.side-nav-link.active {
+  background: #f7e6c6;
+  border-color: #9c7029;
+  font-weight: 700;
+}

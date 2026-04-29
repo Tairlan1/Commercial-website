@@ -129,6 +129,59 @@ function initHeaderLoadAnimation() {
   }, 150);
 }
 
+// ========================
+// SIDE NAV LINKS ACTIVE STATE
+// ========================
+function initSideNavLinksActive() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll('.side-nav-menu a[href^="#"]');
+
+  if (!sections.length || !navLinks.length) return;
+
+  function activateLink(id) {
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href").replace("#", "");
+
+      link.classList.remove("active");
+
+      if (href === id) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  function detectCurrentSection() {
+    let current = "";
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+
+      if (
+        window.scrollY >= top - 250 &&
+        window.scrollY < top + height - 250
+      ) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    if (current) {
+      activateLink(current);
+    }
+  }
+
+  window.addEventListener("scroll", detectCurrentSection);
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const id = link.getAttribute("href").replace("#", "");
+      activateLink(id);
+    });
+  });
+
+  detectCurrentSection();
+}
+
 
 // ========================
 // SIDE NAV DOT ACTIVE STATE
@@ -194,6 +247,27 @@ function initMobileMenu() {
   });
 }
 
+// ========================
+// CLOSE SIDE NAV ON OUTSIDE CLICK
+// ========================
+function initSideNavOutsideClose() {
+  const sideNavToggle = document.getElementById("sideNavToggle");
+
+  if (!sideNavToggle) return;
+
+  document.addEventListener("click", (e) => {
+    const navBlock = e.target.closest("#sideNavToggle") ||
+                     e.target.closest('label[for="sideNavToggle"]') ||
+                     e.target.closest(".side-nav-menu");
+
+    // если клик НЕ по меню → закрываем
+    if (!navBlock) {
+      sideNavToggle.checked = false;
+    }
+  });
+}
+
+
 
 // ========================
 // INIT
@@ -203,6 +277,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderLoadAnimation();
   initSideNavDots();
   initMobileMenu();
+  initSideNavOutsideClose();
+  initSideNavLinksActive();
   updateHeaderState();
 
   window.addEventListener("scroll", updateHeaderState);
