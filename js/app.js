@@ -136,3 +136,53 @@ window.addEventListener("load", () => {
     header.style.transform = "translateY(0)";
   }, 150);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section[id]");
+  const dots = document.querySelectorAll(".nav-dot");
+
+  function activateDot(id) {
+    dots.forEach(dot => {
+      /* reset */
+      dot.style.background = "rgba(255,255,255,0.35)";
+      dot.style.transform = "scale(1)";
+      dot.style.boxShadow = "none";
+
+      /* active state */
+      if (dot.dataset.target === id) {
+        dot.style.background = "#ffffff";
+        dot.style.transform = "scale(1.35)";
+        dot.style.boxShadow = "0 0 14px rgba(255,255,255,0.95)";
+      }
+    });
+  }
+
+  function detectCurrentSection() {
+    let current = "";
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+
+      if (window.scrollY >= top - 300) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    if (current) {
+      activateDot(current);
+    }
+  }
+
+  window.addEventListener("scroll", detectCurrentSection);
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", () => {
+      const id = link.getAttribute("href").replace("#", "");
+      activateDot(id);
+    });
+  });
+
+  /* first section active on page load */
+  detectCurrentSection();
+});

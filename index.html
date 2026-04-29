@@ -158,157 +158,224 @@
 
 <!-- SIDE SECTION NAVIGATION -->
 <div
-  class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:block group"
+  class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:block"
 >
 
-  <!-- elegant side trigger -->
+  <!-- hidden checkbox trigger -->
+  <input
+    type="checkbox"
+    id="sideNavToggle"
+    class="peer hidden"
+  />
+
+  <!-- whole navigation block -->
   <div
-    class="absolute right-0 top-1/2 -translate-y-1/2
-           w-[14px] h-[240px]
-           rounded-l-[20px]
-           bg-gradient-to-b
-           from-[#D8C7A1]
-           via-[#B89A6A]
-           to-[#0F3148]
-           shadow-[0_20px_50px_rgba(15,49,72,0.18)]
-           overflow-hidden"
-  >
-
-    <!-- soft glow -->
-    <div
-      class="absolute inset-0
-             bg-white/10
-             backdrop-blur-sm"
-    ></div>
-
-    <!-- center ornament -->
-    <div
-      class="absolute top-1/2 left-1/2
-             -translate-x-1/2 -translate-y-1/2
-             flex flex-col gap-2"
-    >
-      <span class="w-[4px] h-[4px] rounded-full bg-white/70"></span>
-      <span class="w-[4px] h-[4px] rounded-full bg-white/70"></span>
-      <span class="w-[4px] h-[4px] rounded-full bg-white/70"></span>
-    </div>
-
-  </div>
-
-  <!-- expandable menu -->
-  <div
-    class="mr-4
-          translate-x-[260px]
-          group-hover:translate-x-0
+    class="relative
+          mr-[-260px]
+          peer-checked:mr-0
           transition-all duration-500 ease-in-out"
   >
+    <!-- clickable side tab -->
+    <label
+      for="sideNavToggle"
+      class="absolute
+             right-[100%]
+             top-0
 
+             cursor-pointer
+
+             /* fully visible tab */
+             w-[18px]
+             h-full
+
+             /* luxury gradient */
+             bg-gradient-to-b
+             from-[#D8C7A1]
+             via-[#B89A6A]
+             to-[#0F3148]
+
+             /* merged with menu */
+             rounded-l-[20px]
+             rounded-r-none
+
+             /* same height as menu */
+             overflow-hidden
+             shadow-[0_20px_50px_rgba(15,49,72,0.18)]
+
+             /* smooth motion */
+             transition-all duration-500 ease-in-out
+
+             /* hover + opened */
+             hover:w-[24px]
+             peer-checked:w-[24px]"
+    >
+
+      <!-- soft glow -->
+      <div
+        class="absolute inset-0
+               bg-white/10
+               backdrop-blur-sm"
+      ></div>
+
+      <!-- icon area -->
+      <div
+        class="absolute top-1/2 left-1/2
+               -translate-x-1/2 -translate-y-1/2"
+      >
+
+        <!-- closed state -->
+        <div
+          class="peer-checked:hidden flex flex-col gap-2"
+          id="sideNavDots"
+        >
+          <!-- Главная -->
+          <span
+            class="nav-dot
+                  w-[4px] h-[4px] rounded-full
+                  bg-white/40
+                  transition-all duration-300"
+            data-target="top"
+          ></span>
+
+          <!-- О продукте -->
+          <span
+            class="nav-dot
+                  w-[4px] h-[4px] rounded-full
+                  bg-white/40
+                  transition-all duration-300"
+            data-target="product"
+          ></span>
+
+          <!-- Преимущества -->
+          <span
+            class="nav-dot
+                  w-[4px] h-[4px] rounded-full
+                  bg-white/40
+                  transition-all duration-300"
+            data-target="values"
+          ></span>
+
+          <!-- Партнёрства -->
+          <span
+            class="nav-dot
+                  w-[4px] h-[4px] rounded-full
+                  bg-white/40
+                  transition-all duration-300"
+            data-target="partnership"
+          ></span>
+        </div>
+
+        <!-- opened state -->
+        <div class="hidden peer-checked:flex items-center justify-center">
+          <svg
+            class="w-4 h-4 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+
+      </div>
+    </label>
+
+    <!-- expandable menu -->
     <div
       class="relative
-            bg-white
-            border border-[#E8DFCF]
-            rounded-[28px]
-            px-6 py-7
-            shadow-[0_30px_80px_rgba(15,49,72,0.12)]"
+             bg-white
+             border border-[#E8DFCF]
+
+             rounded-l-none
+             rounded-r-[28px]
+
+             px-6 py-7
+
+             shadow-[0_30px_80px_rgba(15,49,72,0.12)]"
     >
 
       <!-- top ornament -->
       <div class="flex items-center gap-3 mb-6">
-
         <span class="w-8 h-[1px] bg-[#D8C7A1]/80"></span>
 
         <div
           class="w-2.5 h-2.5 rotate-45
-                border border-[#D8C7A1]"
+                 border border-[#D8C7A1]"
         ></div>
 
         <span class="w-8 h-[1px] bg-[#D8C7A1]/80"></span>
-
       </div>
 
-      <!-- title -->
-      <p
-        class="text-[11px]
-              uppercase tracking-[0.22em]
-              text-[#0F3148]/50
-              mb-5"
-      >
-        Navigation
+      <!-- helper text -->
+      <p class="text-sm text-[#0F3148]/55 mb-6">
+        Быстрый переход по разделам
       </p>
 
       <!-- links -->
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-4">
+
+        <a
+          href="#top"
+          class="block
+                text-sm font-medium
+                text-[#0F3148]/75
+                hover:text-[#0F3148]
+                hover:translate-x-1
+                transition duration-300"
+        >
+          Главная страница
+        </a>
 
         <a
           href="#product"
-          class="group/item flex items-center gap-4
-                text-sm text-[#0F3148]/75
+          class="block
+                text-sm font-medium
+                text-[#0F3148]/75
                 hover:text-[#0F3148]
+                hover:translate-x-1
                 transition duration-300"
         >
-          <span
-            class="w-2.5 h-2.5 rounded-full
-                  border border-[#D8C7A1]
-                  bg-[#D8C7A1]/20
-                  group-hover/item:scale-125
-                  group-hover/item:bg-[#D8C7A1]
-                  transition duration-300"
-          ></span>
-
-          <span class="font-medium">
-            О продукте
-          </span>
+          О продукте
         </a>
 
         <a
           href="#values"
-          class="group/item flex items-center gap-4
-                text-sm text-[#0F3148]/75
+          class="block
+                text-sm font-medium
+                text-[#0F3148]/75
                 hover:text-[#0F3148]
+                hover:translate-x-1
                 transition duration-300"
         >
-          <span
-            class="w-2.5 h-2.5 rounded-full
-                  border border-[#D8C7A1]
-                  bg-[#D8C7A1]/20
-                  group-hover/item:scale-125
-                  group-hover/item:bg-[#D8C7A1]
-                  transition duration-300"
-          ></span>
-
-          <span class="font-medium">
-            Преимущества
-          </span>
+          Преимущества
         </a>
 
         <a
           href="#partnership"
-          class="group/item flex items-center gap-4
-                text-sm text-[#0F3148]/75
+          class="block
+                text-sm font-medium
+                text-[#0F3148]/75
                 hover:text-[#0F3148]
+                hover:translate-x-1
                 transition duration-300"
         >
-          <span
-            class="w-2.5 h-2.5 rounded-full
-                  border border-[#D8C7A1]
-                  bg-[#D8C7A1]/20
-                  group-hover/item:scale-125
-                  group-hover/item:bg-[#D8C7A1]
-                  transition duration-300"
-          ></span>
-
-          <span class="font-medium">
-            Партнёрства
-          </span>
+          Партнёрства
         </a>
 
       </div>
 
     </div>
+
   </div>
 </div>
 
 <!-- HERO -->
-<section class="relative h-[76vh] min-h-[650px] flex items-center overflow-hidden">
+<section id="top" class="relative h-[76vh] min-h-[650px] flex items-center overflow-hidden">
 
   <!-- Background Video -->
   <video
