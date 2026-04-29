@@ -21,71 +21,103 @@
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-    box-shadow: 0 8px 32px rgba(15, 49, 72, 0.08);
-  "
->
+    box-shadow: 0 8px 32px rgba(15, 49, 72, 0.08);">
+  
   <div
     id="headerInner"
-    class="w-full flex justify-between items-center
-           px-4 sm:px-6 lg:px-10 xl:px-16
-           transition-all duration-500"
-  >
+    class="w-full flex items-center gap-3
+        px-4 sm:px-6 lg:px-10 xl:px-16
+        transition-all duration-500">
 
     <!-- LOGO -->
-    <a href="index.html" class="flex items-center">
+    <a href="index.html" class="flex items-center shrink-0">
 
       <div
         id="logoBox"
         class="bg-white/95 backdrop-blur-md rounded-sm
-               px-3 py-1.5 shadow-md border border-gray-200
-               transition-all duration-500"
+              px-2 py-1
+              md:px-3.5 md:py-2
+              shadow-md border border-gray-200
+              transition-all duration-500"
       >
-        <div class="flex flex-col items-center leading-none">
+        <div
+          id="logoWrapper"
+          class="flex flex-col items-center justify-center
+                w-[82px] sm:w-[110px] md:w-[165px]
+                h-[38px] sm:h-[50px] md:h-[78px]"
+        >
 
           <img
             src="./assets/Logo.png"
             alt="GLOBAL TRADE"
             id="logoImg"
-            class="h-8 md:h-9 w-auto object-contain mb-0 transition-all duration-500"
+            class="h-7 sm:h-8 md:h-[56px]
+                  w-auto max-w-full
+                  object-contain
+                  pt-1 md:pt-2
+                  transition-all duration-500"
           />
 
           <h1
             id="logoText"
-            class="text-[#0F3148] font-semibold text-xs md:text-sm
-                   tracking-wide leading-none -mt-1 transition-all duration-500"
+            class="text-[#0F3148] font-semibold
+                  text-[9px] sm:text-xs md:text-sm
+                  tracking-wide leading-none
+
+                  mt-[4px]
+                  md:mt-0
+
+                  whitespace-nowrap
+                  transition-all duration-500"
           >
             GLOBAL TRADE
           </h1>
-
         </div>
       </div>
 
     </a>
-
     <!-- NAV -->
     <nav
       id="mainNav"
-      class="hidden md:flex gap-8 text-sm font-medium text-white/90 transition-all duration-500"
+      class="hidden md:flex mx-auto gap-8
+            text-sm font-medium text-white/90
+            transition-all duration-500"
     >
-      <a data-i18n="nav_about" href="about.html" class="hover:text-[#D8C7A1] transition">
+      <a
+        data-i18n="nav_about"
+        href="about.html"
+        class="hover:text-[#D8C7A1] transition"
+      >
         О компании
       </a>
 
-      <a data-i18n="nav_products" href="products.html" class="hover:text-[#D8C7A1] transition">
+      <a
+        data-i18n="nav_products"
+        href="products.html"
+        class="hover:text-[#D8C7A1] transition"
+      >
         Продукция
       </a>
 
-      <a data-i18n="nav_lab" href="lab.html" class="hover:text-[#D8C7A1] transition">
+      <a
+        data-i18n="nav_lab"
+        href="lab.html"
+        class="hover:text-[#D8C7A1] transition"
+      >
         Лабораторные испытания
       </a>
 
-      <a data-i18n="nav_contacts" href="contacts.html" class="hover:text-[#D8C7A1] transition">
+      <a
+        data-i18n="nav_contacts"
+        href="contacts.html"
+        class="hover:text-[#D8C7A1] transition"
+      >
         Контакты
       </a>
     </nav>
 
     <!-- LANGUAGE SWITCHER -->
-    <div class="relative" id="langDropdown">
+    <div class="relative flex items-center gap-3 ml-auto md:ml-0" id="langDropdown" >
 
       <button
         type="button"
@@ -121,40 +153,161 @@
 
       <div
         id="langMenu"
-        class="hidden absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-xl p-2 z-50"
+        class="hidden absolute right-0 top-full mt-4
+              w-48
+              bg-[#FCFBF8]/95
+              backdrop-blur-xl
+              rounded-3xl
+              border border-[#E8DFCF]
+              shadow-[0_30px_80px_rgba(15,49,72,0.10)]
+              p-2.5
+              z-50
+              animate-[fadeIn_.28s_ease]"
       >
 
         <button
           type="button"
           onclick="switchLanguage('ru')"
-          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+          class="w-full text-left flex items-center gap-3
+                px-3 py-3
+                rounded-2xl
+                hover:bg-white
+                transition-all duration-300"
         >
-          <img src="https://flagcdn.com/w40/ru.png" class="w-5 h-5 rounded-sm" alt="RU" />
-          <span>Русский</span>
+          <div class="w-8 h-8 rounded-xl bg-white shadow-sm flex items-center justify-center">
+            <img
+              src="https://flagcdn.com/w40/ru.png"
+              class="w-5 h-5 rounded-sm object-cover"
+              alt="RU"
+            />
+          </div>
+
+          <span class="text-sm font-medium text-[#0F3148]">
+            Русский
+          </span>
         </button>
 
         <button
           type="button"
           onclick="switchLanguage('en')"
-          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+          class="w-full text-left flex items-center gap-3
+                px-3 py-3
+                rounded-2xl
+                hover:bg-white
+                transition-all duration-300"
         >
-          <img src="https://flagcdn.com/w40/gb.png" class="w-5 h-5 rounded-sm" alt="EN" />
-          <span>English</span>
+          <div class="w-8 h-8 rounded-xl bg-white shadow-sm flex items-center justify-center">
+            <img
+              src="https://flagcdn.com/w40/gb.png"
+              class="w-5 h-5 rounded-sm object-cover"
+              alt="EN"
+            />
+          </div>
+
+          <span class="text-sm font-medium text-[#0F3148]">
+            English
+          </span>
         </button>
 
         <button
           type="button"
           onclick="switchLanguage('kz')"
-          class="w-full text-left flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-50 transition"
+          class="w-full text-left flex items-center gap-3
+                px-3 py-3
+                rounded-2xl
+                hover:bg-white
+                transition-all duration-300"
         >
-          <img src="https://flagcdn.com/w40/kz.png" class="w-5 h-5 rounded-sm" alt="KZ" />
-          <span>Қазақша</span>
+          <div class="w-8 h-8 rounded-xl bg-white shadow-sm flex items-center justify-center">
+            <img
+              src="https://flagcdn.com/w40/kz.png"
+              class="w-5 h-5 rounded-sm object-cover"
+              alt="KZ"
+            />
+          </div>
+
+          <span class="text-sm font-medium text-[#0F3148]">
+            Қазақша
+          </span>
         </button>
 
       </div>
     </div>
+
+    <!-- MOBILE BURGER -->
+    <div class="md:hidden">
+      <button
+        id="mobileMenuBtn"
+        class="flex items-center justify-center
+              w-11 h-11 rounded-xl
+              border border-white/20
+              bg-white/10 backdrop-blur-md
+              text-white
+              hover:border-[#D8C7A1]
+              transition duration-300"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+
   </div>
 </header>
+
+<!-- MOBILE DROPDOWN MENU -->
+<div
+  id="mobileMenu"
+  class="fixed top-[90px] right-4 left-4
+         z-50 hidden
+         bg-white rounded-3xl
+         border border-gray-100
+         shadow-[0_20px_60px_rgba(15,49,72,0.12)]
+         p-6"
+>
+
+  <div class="flex flex-col gap-5">
+
+    <a
+      href="about.html"
+      class="text-[#0F3148] font-medium hover:text-[#D8C7A1] transition"
+    >
+      О компании
+    </a>
+
+    <a
+      href="products.html"
+      class="text-[#0F3148] font-medium hover:text-[#D8C7A1] transition"
+    >
+      Продукция
+    </a>
+
+    <a
+      href="lab.html"
+      class="text-[#0F3148] font-medium hover:text-[#D8C7A1] transition"
+    >
+      Лабораторные испытания
+    </a>
+
+    <a
+      href="contacts.html"
+      class="text-[#0F3148] font-medium hover:text-[#D8C7A1] transition"
+    >
+      Контакты
+    </a>
+
+  </div>
+</div>
 
 <!-- SIDE SECTION NAVIGATION -->
 <div
@@ -383,7 +536,12 @@
     muted
     loop
     playsinline
-    class="absolute inset-0 w-full h-full object-cover z-10"
+    class="absolute inset-0
+          w-full h-full
+          object-cover md:object-cover
+          object-center
+          sm:object-contain
+          z-10"
   >
     <source src="./assets/Main.mp4" type="video/mp4" />
   </video>
